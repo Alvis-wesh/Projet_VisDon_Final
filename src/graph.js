@@ -9,6 +9,8 @@ const dataParAnnee = annee => {
   }
 }
 
+// les titres des légendes ont été raccourcis, la section "Imprimés" a été supprimée, les chiffres internet ont été regroupés
+
 var chart = bb.generate({
     title: {
         text: "Les dépenses des suisses pour les médias, 2006-2015\nSource: Office fédérale de la statistique"
@@ -155,32 +157,32 @@ setTimeout(function() {
 });
 }, 10000);
 
-setTimeout(function() {
-	chart.unload({
-        columns: [
-    ["Dépenses des suisses", ...dataParAnnee(2006)],
-    ["2007", ...dataParAnnee(2007)],
-    ["2008", ...dataParAnnee(2008)],
-    ["2009", ...dataParAnnee(2009)],
-    ["2010", ...dataParAnnee(2010)],
-    ["2011", ...dataParAnnee(2011)],
-    ["2012", ...dataParAnnee(2012)],
-    ["2013", ...dataParAnnee(2013)],
-    ["2014", ...dataParAnnee(2014)],
-    ["2015", ...dataParAnnee(2015)],
-    ],
-});
-}, 11000);
+// setTimeout(function() {
+// 	chart.unload({
+//         columns: [
+//     ["Dépenses des suisses", ...dataParAnnee(2006)],
+//     ["2007", ...dataParAnnee(2007)],
+//     ["2008", ...dataParAnnee(2008)],
+//     ["2009", ...dataParAnnee(2009)],
+//     ["2010", ...dataParAnnee(2010)],
+//     ["2011", ...dataParAnnee(2011)],
+//     ["2012", ...dataParAnnee(2012)],
+//     ["2013", ...dataParAnnee(2013)],
+//     ["2014", ...dataParAnnee(2014)],
+//     ["2015", ...dataParAnnee(2015)],
+//     ],
+// });
+// }, 11000);
 
-setTimeout(function() {
-	chart.load({
-		columns: [
-			["Dépenses des suisses", ...dataParAnnee(2015)],
-		]
-    });
-}, 12000);
+// setTimeout(function() {
+// 	chart.load({
+// 		columns: [
+// 			["Dépenses des suisses", ...dataParAnnee(2015)],
+// 		]
+//     });
+// }, 12000);
 
-setTimeout(function() {
-	chart.transform("pie");
-}, 13000);
+// setTimeout(function() {
+// 	chart.transform("pie");
+// }, 13000);
 
