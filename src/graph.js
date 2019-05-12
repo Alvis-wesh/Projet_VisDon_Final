@@ -1,31 +1,186 @@
-const data = require("../data/depenses.json")
+const { categories, data } = require("../data/data.json")
 
-import 'run.js';
-
-console.log(data);
-
-//var dessiner = d => 
-
+const dataParAnnee = annee => {
+  const found = data.find(d => d.annee === annee)
+  if (found) {
+    return found.list
+  } else {
+    return []
+  }
+}
 
 var chart = bb.generate({
+    title: {
+        text: "Les dépenses des suisses pour les médias, 2006-2015\nSource: Office fédérale de la statistique"
+      },
   data: {
     columns: [
-	["Dépenses", 100, 200, 400, 600],
+    ["Dépenses des suisses", ...dataParAnnee(2006)],
+    /*["2007", ...dataParAnnee(2007)],
+    ["2008", ...dataParAnnee(2008)],
+    ["2009", ...dataParAnnee(2009)],
+    ["2010", ...dataParAnnee(2010)],
+    ["2011", ...dataParAnnee(2011)],
+    ["2012", ...dataParAnnee(2012)],
+    ["2013", ...dataParAnnee(2013)],
+    ["2014", ...dataParAnnee(2014)],
+    ["2015", ...dataParAnnee(2015)],*/
     ],
     type: "bar"
   },
+
+  bar: {
+    padding: 3
+  },
+
+  padding: {
+    top: 40,
+    right: 100,
+    bottom: 40,
+    left: 100
+  },
+
+  grid: {
+    x: {
+      show: true
+    },
+    y: {
+      show: true
+    }
+  },
+
+  zoom: {
+    enabled: {
+      type: "drag"
+    }
+  },
+  
   axis: {
     x: {
       type: "category",
-      categories: [
-        "Vidéos",
-        "Streaming",
-        "Livres",
-        "cat4",
-        "cat5",
-        "cat6",
-      ]
+      categories, // les categories du fichier data.json
     }
   },
+  
   bindto: "#categoryAxis"
 });
+
+setTimeout(function() {
+	chart.load({
+		columns: [
+			["Dépenses des suisses", ...dataParAnnee(2007)],
+		]
+	});
+}, 1000);
+
+setTimeout(function() {
+	chart.load({
+		columns: [
+			["Dépenses des suisses", ...dataParAnnee(2008)],
+		]
+	});
+}, 2000);
+
+setTimeout(function() {
+	chart.load({
+		columns: [
+			["Dépenses des suisses", ...dataParAnnee(2009)],
+		]
+	});
+}, 3000);
+
+setTimeout(function() {
+	chart.load({
+		columns: [
+			["Dépenses des suisses", ...dataParAnnee(2010)],
+		]
+	});
+}, 4000);
+
+setTimeout(function() {
+	chart.load({
+		columns: [
+			["Dépenses des suisses", ...dataParAnnee(2011)],
+		]
+	});
+}, 5000);
+
+setTimeout(function() {
+	chart.load({
+		columns: [
+			["Dépenses des suisses", ...dataParAnnee(2012)],
+		]
+	});
+}, 6000);
+
+setTimeout(function() {
+	chart.load({
+		columns: [
+			["Dépenses des suisses", ...dataParAnnee(2013)],
+		]
+	});
+}, 7000);
+
+setTimeout(function() {
+	chart.load({
+		columns: [
+			["Dépenses des suisses", ...dataParAnnee(2014)],
+		]
+	});
+}, 8000);
+
+setTimeout(function() {
+	chart.load({
+		columns: [
+			["Dépenses des suisses", ...dataParAnnee(2015)],
+		]
+	});
+}, 9000);
+
+setTimeout(function() {
+	chart.load({
+        columns: [
+    ["Dépenses des suisses", ...dataParAnnee(2006)],
+    ["2007", ...dataParAnnee(2007)],
+    ["2008", ...dataParAnnee(2008)],
+    ["2009", ...dataParAnnee(2009)],
+    ["2010", ...dataParAnnee(2010)],
+    ["2011", ...dataParAnnee(2011)],
+    ["2012", ...dataParAnnee(2012)],
+    ["2013", ...dataParAnnee(2013)],
+    ["2014", ...dataParAnnee(2014)],
+    ["2015", ...dataParAnnee(2015)],
+    ],
+
+});
+}, 10000);
+
+setTimeout(function() {
+	chart.unload({
+        columns: [
+    ["Dépenses des suisses", ...dataParAnnee(2006)],
+    ["2007", ...dataParAnnee(2007)],
+    ["2008", ...dataParAnnee(2008)],
+    ["2009", ...dataParAnnee(2009)],
+    ["2010", ...dataParAnnee(2010)],
+    ["2011", ...dataParAnnee(2011)],
+    ["2012", ...dataParAnnee(2012)],
+    ["2013", ...dataParAnnee(2013)],
+    ["2014", ...dataParAnnee(2014)],
+    ["2015", ...dataParAnnee(2015)],
+    ],
+});
+}, 11000);
+
+setTimeout(function() {
+	chart.load({
+		columns: [
+			["Dépenses des suisses", ...dataParAnnee(2015)],
+		]
+    });
+}, 12000);
+
+setTimeout(function() {
+	chart.transform("pie");
+}, 13000);
+

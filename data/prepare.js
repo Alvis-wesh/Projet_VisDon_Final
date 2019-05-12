@@ -1,4 +1,4 @@
-const data = require('../data/depenses.json')
+const data = require('./depenses.json')
 
 const categories = [
   'Film et vidéo',
@@ -11,7 +11,6 @@ const categories = [
   'Journaux et périodiques',
   "Internet (y.c. abonnemets combinés) jusqu'en 2011",
   'Internet (y.c. abonnemets combinés) à partir de 2012 ',
-
 ]
 
 const num = x => Number(x.split(',').join('.'))
@@ -23,4 +22,9 @@ const catParAn = d => ({
     .map(n => isNaN(n) ? 0 : n)
 })
 
-console.log(data.map(catParAn))
+const result = {
+  categories,
+  data: data.map(catParAn)
+}
+
+console.log(JSON.stringify(result, null, 2))
