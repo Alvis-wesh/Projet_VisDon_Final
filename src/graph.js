@@ -13,7 +13,7 @@ const dataParAnnee = annee => {
 
 var chart = bb.generate({
     title: {
-        text: "Les dépenses des suisses pour les médias, 2006-2015\nSource: Office fédérale de la statistique"
+        text: "Les dépenses des suisses pour les médias, 2006-2015\nSource: Office fédéral de la statistique"
       },
   data: {
     columns: [
